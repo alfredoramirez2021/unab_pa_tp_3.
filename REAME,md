@@ -8,6 +8,16 @@ invitar a los otros integrantes y al docente a la cuenta felipemoralesquerol)
 T2: Exposición de la Práctica
 
 Ejercicio 2:
+● Ejercicio 1:
+● Conforme equipos de trabajo de 2 (a lo sumo 3) estudiantes
+● Crear un carpeta en su equipo de trabajo de nombre unab_pa_tp_3.
+● Asociar su IDE de preferencia con la carpeta creada anteriormente
+● Cree un archivo README.md con los objetivos del presente taller
+● Publique su proyecto en GitHub (debe hacer desde la cuenta de uno de los integrantes del equipo,
+invitar a los otros integrantes y al docente a la cuenta felipemoralesquerol)
+T2: Exposición de la Práctica
+
+Ejercicio 2:
 ● Crear la clase Punto con dos atributos x e y (ambos numéricos), con el correspondiente
 constructor que recibe ambos valores.
 ● Definir métodos tales como:
@@ -18,7 +28,203 @@ constructor que recibe ambos valores.
 negativos-)
 ○ Cualquier otro método que considere importante
 T2: Exposición de la Práctica
+respuesta1:
+class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
+    def eje_x(self):
+        return self.x
 
+    def eje_y(self):
+        return self.y
 
+    def impresion(self):
+        return f"({self.x}, {self.y})"
+
+    def opuesto(self):
+        return Punto(-self.x, -self.y)
+prueba1
+# Crear un punto
+p = Punto(3, 4)
+
+# Usar los métodos
+print(p.eje_x())  # Output: 3
+print(p.eje_y())  # Output: 4
+print(p.impresion())  # Output: (3, 4)
+
+# Obtener el punto opuesto
+p_opuesto = p.opuesto()
+print(p_opuesto.impresion())  # Output: (-3, -4)
+
+Ejercicio 3:
+Define una clase Línea con dos atributos: _punto_a y _punto_b. Son dos puntos por los que
+pasa la línea en un espacio de dos dimensiones.
+La clase dispondrá de los siguientes métodos:
+● Linea(Punto, Punto) Constructor que recibe como parámetros dos objetos de la clase
+Punto, que son utilizados para inicializar los atributos.
+● mueve_derecha(float) Desplaza la línea a la derecha la distancia que se indique.
+● mueve_izquierda(float) Desplaza la línea a la izquierda la distancia que se indique.
+● mueve_arriba(float) Desplaza la línea hacia arriba la distancia que se indique.
+● mueve_abajo(float) Desplaza la línea hacia abajo la distancia que se indique.
+T2: Exposición de la Práctica
+RESPUESTA 
+
+class Linea:
+    def __init__(self, punto_a, punto_b):
+        self._punto_a = punto_a
+        self._punto_b = punto_b
+
+    def mueve_derecha(self, distancia):
+        self._punto_a.x += distancia
+        self._punto_b.x += distancia
+
+    def mueve_izquierda(self, distancia):
+        self._punto_a.x -= distancia
+        self._punto_b.x -= distancia
+
+    def mueve_arriba(self, distancia):
+        self._punto_a.y += distancia
+        self._punto_b.y += distancia
+
+    def mueve_abajo(self, distancia):
+        self._punto_a.y -= distancia
+        self._punto_b.y -= distancia
+Ejercicio 4:
+Desarrolla una clase Cancion con los siguientes atributos:
+● titulo: una variable String que guarda el título de la canción.
+● autor: una variable String que guarda el autor de la canción.
+Con los siguientes métodos:
+● Cancion(String, String): constructor que recibe como parámetros el título y el autor de la
+canción (por este orden).
+● get_titulo(): devuelve el título de la canción.
+● get_autor(): devuelve el autor de la canción.
+● set_titulo(String): establece el título de la canción.
+● set_autor(String): establece el autor de la canción
+RESPUESTA>:
+class Cancion:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+
+    def get_titulo(self):
+        return self.titulo
+
+    def get_autor(self):
+        return self.autor
+
+    def set_titulo(self, nuevo_titulo):
+        self.titulo = nuevo_titulo
+
+    def set_autor(self, nuevo_autor):
+        self.autor = nuevo_autor
+PRUEBA
+# Crear una canción
+cancion = Cancion("Despacito", "Luis Fonsi")
+
+# Obtener el título y el autor
+print(cancion.get_titulo())  # Output: "Despacito"
+print(cancion.get_autor())  # Output: "Luis Fonsi"
+
+# Establecer un nuevo título y autor
+cancion.set_titulo("Shape of You")
+cancion.set_autor("Ed Sheeran")
+
+print(cancion.get_titulo())  # Output: "Shape of You"
+print(cancion.get_autor())  # Output: "Ed Sheeran"
+
+Ejercicio 5:
+● Crea una clase Libro que modele la información que se mantiene en una biblioteca sobre
+cada libro: título, autor (usa la clase Persona), ISBN, páginas, edición, editorial , lugar
+(ciudad y país) y fecha de edición (como texto). La clase debe proporcionar los siguientes
+servicios: getters y setters, método para leer la información y método para mostrar la
+información.
+● Este último método mostrará la información del libro con este formato:
+Título: Introduction to Java Programming 3a. edición
+Autor: Liang, Y. Daniel
+ISBN: 0-13-031997-X
+Prentice-Hall, New Jersey (USA)
+viernes 16 de noviembre de 2001
+784 páginas
+RESPUESTA:
+class Persona:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
+class Libro:
+    def __init__(self, titulo, autor, isbn, paginas, edicion, editorial, lugar, fecha_edicion):
+        self.titulo = titulo
+        self.autor = autor
+        self.isbn = isbn
+        self.paginas = paginas
+        self.edicion = edicion
+        self.editorial = editorial
+        self.lugar = lugar
+        self.fecha_edicion = fecha_edicion
+
+    def get_titulo(self):
+        return self.titulo
+
+    def get_autor(self):
+        return self.autor
+
+    def get_isbn(self):
+        return self.isbn
+
+    def get_paginas(self):
+        return self.paginas
+
+    def get_edicion(self):
+        return self.edicion
+
+    def get_editorial(self):
+        return self.editorial
+
+    def get_lugar(self):
+        return self.lugar
+
+    def get_fecha_edicion(self):
+        return self.fecha_edicion
+
+    def set_titulo(self, nuevo_titulo):
+        self.titulo = nuevo_titulo
+
+    def set_autor(self, nuevo_autor):
+        self.autor = nuevo_autor
+
+    def set_isbn(self, nuevo_isbn):
+        self.isbn = nuevo_isbn
+
+    def set_paginas(self, nuevas_paginas):
+        self.paginas = nuevas_paginas
+
+    def set_edicion(self, nueva_edicion):
+        self.edicion = nueva_edicion
+
+    def set_editorial(self, nueva_editorial):
+        self.editorial = nueva_editorial
+
+    def set_lugar(self, nuevo_lugar):
+        self.lugar = nuevo_lugar
+
+    def set_fecha_edicion(self, nueva_fecha_edicion):
+        self.fecha_edicion = nueva_fecha_edicion
+
+    def leer_informacion(self):
+        print(f"Título: {self.titulo}")
+        print(f"Autor: {self.autor}")
+        print(f"ISBN: {self.isbn}")
+        print(f"{self.editorial}, {self.lugar}")
+        print(self.fecha_edicion)
+        print(f"{self.paginas} páginas")
+
+# Ejemplo de uso
+autor = Persona("Y. Daniel", "Liang")
+libro = Libro("Introduction to Java Programming", autor, "0-13-031997-X", 784, "3a. edición", "Prentice-Hall", "New Jersey (USA)", "viernes 16 de noviembre de 2001")
+libro.leer_informacion()
 
